@@ -5,7 +5,7 @@ def GetP_Q():
       primeList=[0,0]
       while(primeList[0] == primeList[1]):
             for i in range(0, 2):
-                  n = sympy.randprime(2, 2**8)
+                  n = sympy.randprime(2**30, 2**35)
                   primeList[i] = n
       return primeList[0], primeList[1]
       #return 17,11
@@ -20,7 +20,6 @@ def Calculate_e(phi_n):
       e = 2
       while(e < phi_n):
             if GCD(e,phi_n) == 1:
-                  
                   return e   
             else:
                   e = e +1
@@ -43,8 +42,6 @@ def Encryption(M, e, n ):
       for m in MessageList:
             C.append((m ** e) % n)
       return C
-
-
 #Extended Euclidean Algorithm
 def ExtendedEuclid(a,b):
     if(a%b==0):
@@ -54,7 +51,6 @@ def ExtendedEuclid(a,b):
         s = s-((a//b) * t)
         return(gcd,t,s)
 
-
 #Multiplicative Inverse
 def mult_inv(e,r):
     gcd,s,_=ExtendedEuclid(e,r)
@@ -63,17 +59,13 @@ def mult_inv(e,r):
     else:
         return s%r
 
-
 #RSA Decryption
 def Decryption(C, d, n):
       M = []
       for c in C:
-            M.append((c**d) % n)
-            
+            M.append((c ** d) % n)      
+      
       return M
-
-
-
 def toStr(asci):
       return (''.join(chr(i) for i in asci))
 

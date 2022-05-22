@@ -57,9 +57,15 @@ C = Encryption(M,e,n)
 
 C_sharp = Encryption2(toStr(C),r,e,n)
 
+
+
+
 Y = Decryption(C_sharp,d,n)
 
+
+
 M2= Decryption2(Y,r,n)
+
 print(toStr(M2))
 
 
