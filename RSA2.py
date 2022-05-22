@@ -43,6 +43,8 @@ def Encryption(M, e, n ):
       for m in MessageList:
             C.append((m ** e) % n)
       return C
+
+
 #Extended Euclidean Algorithm
 def ExtendedEuclid(a,b):
     if(a%b==0):
@@ -52,6 +54,7 @@ def ExtendedEuclid(a,b):
         s = s-((a//b) * t)
         return(gcd,t,s)
 
+
 #Multiplicative Inverse
 def mult_inv(e,r):
     gcd,s,_=ExtendedEuclid(e,r)
@@ -60,17 +63,13 @@ def mult_inv(e,r):
     else:
         return s%r
 
+
 #RSA Decryption
 def Decryption(C, d, n):
       M = []
-      print("entered teh decryption")
-      
       for c in C:
-            print("Inside the loop")
-            print('This is M so far {M}')
-            M[c] = (c**d) % n
-            print("Never made it psat here?")   
-      print("Should fucking return here!")
+            M.append((c**d) % n)
+            
       return M
 
 

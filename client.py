@@ -53,13 +53,12 @@ def client_receive():
             if message == "alias?":
                 client.send(alias.encode('utf-8'))
             else:
-                print("Before the decryption? Why does it crash?")
-               # M = Decryption(message,d,n)
-               M = []
                M = Decryption(message,d,n)
-                print("About to crash?")
-                print(M)
-                #print(M)
+               print(M)
+               
+                
+                
+        
         except:
             print('Error!')
             client.close()
